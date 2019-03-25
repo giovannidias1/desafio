@@ -9,3 +9,7 @@
 .table-body{
     margin-left: 10px;
 }
+
+tr{
+    cursor: pointer !important;
+}

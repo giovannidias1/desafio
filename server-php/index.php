@@ -10,7 +10,7 @@ if (isset($_GET['path'])) {
 }
 $contents = file_get_contents('tickets.json');
 
-$json = json_decode($contents);
+$json = json_decode($contents,true);
 
 $method =  $_SERVER['REQUEST_METHOD'];
 
@@ -25,6 +25,8 @@ if ($method === 'GET') {
         /**
             Retorna todos os dados do JSON
         **/
+        $json = json_encode($json);
+        $json =  json_decode($json,false);
         echo json_encode(setPriority($json));
     } else {
         if ($data = GetById($json, $path)) {
@@ -37,6 +39,7 @@ if ($method === 'GET') {
 
 function GetById($allData, $ticketId)
 {
+    
     $count = count($allData);
     /**
         Aqui é rodado um laço que verifica se o numero que venho na variável path é igual ao id do arquivo
@@ -47,7 +50,7 @@ function GetById($allData, $ticketId)
                 Aqui ele dá o retorno para não precisar percorrer todos os dados,
                 isso vai ajudar no desempenho da aplicação, pois só irá percorrer todos os dados se for necessário 
             **/
-            return $allData[$i];
+            return $allData[$i]['Interactions'];
         }
     }
     /**
