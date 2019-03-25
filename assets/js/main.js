@@ -17,14 +17,6 @@ $(document).ready(function() {
       str += "</div>";
       $(".modal-body").append(str);
     });
-
-    // for (i = 0; i < data.length; i++) {
-    //   console.log(i);
-    //   document.createElement("h3").innerHTML = data[i].Sender
-
-    //   $("#send").html(data[i].Sender);
-    //    $("#msg").html(data[i].Message);
-    // }
   });
 });
 
