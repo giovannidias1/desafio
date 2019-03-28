@@ -1,3 +1,7 @@
+# Aviso
+Para rodar o projeto o caminho da pasta deve ser htdocs/php-casetickets
+
+
 # Desafio desenvolvedor backend
 
 Precisamos melhorar o atendimento no Brasil, para alcançar esse resultado, precisamos de um algoritmo que classifique
